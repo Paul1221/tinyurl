@@ -12,11 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('urls', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('url');
             $table->string('hash')->nullable();
             $table->timestamps();
         });
+
+        DB::statement("ALTER TABLE urls AUTO_INCREMENT =  33128793634;");
     }
 
     /**
